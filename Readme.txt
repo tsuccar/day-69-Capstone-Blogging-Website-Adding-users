@@ -110,3 +110,43 @@ HINT 3: The abort function is quick way to return HTTP errors like 403 or 404:
     Docs : https://pythonhosted.org/Flask-Gravatar/
 
 10) homework: Make the @login_required decorator work for log_out function.
+
+11) To deploy on Heroku:
+
+        - pip  install unicorn
+        - Add the version in requirements.txt
+         - project top-level folder called just - Procfile   <- no extention and 'P'
+         - in the Procfile :  web: gunicorn main:app   : To use gunicorn to serve your
+         web app and the Flask app object is the main.py file.
+
+ 12) At the time this is deployed Gihub is disabled on Heroku.
+    Install Heroku client locally and uplode using git.
+    https://devcenter.heroku.com/articles/git
+
+        1) Intall Heroku :
+            - brew tap heroku/brew && brew install heroku
+
+       2)  Login:
+            - heroku login
+
+       3) Create a Heroku Remote:
+            - heroku git:remote -a example-app      #remote-app mayhave been created in a browser
+s               > et git remote heroku to https://git.heroku.com/example-app.git
+
+       4) confirm with a command:
+            - git remote -v
+                > heroku  https://git.heroku.com/example-app.git (fetch)
+                > heroku  https://git.heroku.com/example-app.git (push)
+
+       5) for existing app on local machine:
+            - heroku git:remote -a example-app
+                > set git remote heroku to https://git.heroku.com/example-app.git
+
+       6) deploy your code:
+            - git push heroku main
+
+       7) Reset a Git repo:
+            - heroku repo:reset --app appname
+
+       8) Repos size (<1GB)
+            - heroku apps:info
