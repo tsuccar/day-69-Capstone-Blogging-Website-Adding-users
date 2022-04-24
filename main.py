@@ -49,7 +49,7 @@ class User(UserMixin,db.Model):
     posts = relationship("BlogPost",back_populates="author")
     comments = relationship("Comment", back_populates="comment_author")
 # Line below only required once, when creating DB.
-# db.create_all()
+db.create_all()
 
 class BlogPost(db.Model):
     __tablename__ = "blog_posts"
@@ -70,7 +70,7 @@ class BlogPost(db.Model):
 
 
 #Line below only required once, when creating DB.
-# db.create_all()
+db.create_all()
 
 ##CONFIGURE TABLES
 class Comment(db.Model):
@@ -84,7 +84,7 @@ class Comment(db.Model):
     parent_post = relationship("BlogPost", back_populates="comments")
     text = db.Column(db.Text, nullable=False)
 #Line below only required once, when creating DB.
-# db.create_all()
+db.create_all()
 
 # following is a call back to lookin into the session DB to retrieve
 @login_manager.user_loader
