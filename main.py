@@ -19,8 +19,7 @@ import os
 
 app = Flask(__name__)
 # the SECRET_KEY was supplied on Heroku config vars in settings.
-app.config['SECRET_KEY'] =  os.environ.get("SECRET_KEY")
-#'8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
@@ -31,7 +30,8 @@ login_manager.init_app(app)
 ##CONNECT TO DB
 # this  DTABASE_URL setting will be activated for postgress db URL if it is deployed on Heroku. it
 # it fails then goes back to using sqlite locally
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL",  "sqlite:///blog.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL","sqlite:///blog.db")
+#"sqlite:///blog.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
