@@ -150,3 +150,13 @@ s               > et git remote heroku to https://git.heroku.com/example-app.git
 
        8) Repos size (<1GB)
             - heroku apps:info
+
+ 13) if you're using postgress DB, then
+
+    SQLite is pre-installed for all Python projects, but if we are going to use
+    Postgres, we'll need to install the psycopg2-binary packages as well. Note,
+    you'll also need to add the package name and version to requirements.txt as
+     well as commit and push the updates.
+    -Psycopg is the most popular PostgreSQL database adapter for the Python programming language
+        https://pypi.org/project/psycopg2-binary/
+     -  pip install psycopg2-binary
