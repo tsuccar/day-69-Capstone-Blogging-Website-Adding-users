@@ -30,12 +30,11 @@ login_manager.init_app(app)
 ##CONNECT TO DB
 # this  DTABASE_URL setting will be activated for postgress db URL if it is deployed on Heroku. it
 # it fails then goes back to using sqlite locally
-<<<<<<< HEAD
+
 # on Herooku chnaged the URL name from postgres to postgresql
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL2","sqlite:///blog.db")
-=======
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL","sqlite:///blog.db")
->>>>>>> 8a48aaf859f7f5567007af8b882692ec847147ba
+
 #"sqlite:///blog.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
