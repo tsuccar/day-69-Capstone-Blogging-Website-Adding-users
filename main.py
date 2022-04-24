@@ -33,8 +33,6 @@ login_manager.init_app(app)
 
 # on Herooku chnaged the URL name from postgres to postgresql
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL2","sqlite:///blog.db")
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL","sqlite:///blog.db")
-
 #"sqlite:///blog.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
